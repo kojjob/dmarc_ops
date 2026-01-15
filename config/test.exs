@@ -36,3 +36,7 @@ config :phoenix_live_view,
 # Sort query params output of verified routes for robust url comparisons
 config :phoenix,
   sort_verified_routes_query_params: true
+
+# Disable Swoosh API client in test
+config :swoosh, :api_client, false
+config :dmarc_ops, DmarcOps.Mailer, adapter: Swoosh.Adapters.Test
